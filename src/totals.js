@@ -1,8 +1,8 @@
 'use strict';
 
-const statuses = require('../../../config/statuses');
-const genders = require('../../../config/genders');
-const ageRanges = require('../../../config/ageRanges');
+const statuses = require('../config/common/statuses');
+const genders = require('../config/common/genders');
+const ageRanges = require('../config/common/ageRanges');
 
 let totals = {
   statusTotals: {
