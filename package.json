@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "test": "test",
-    "remote": "gcloud compute --project \"affable-alpha-136423\" ssh --zone \"us-central1-b\" \"instance-1\""
+    "remote": "gcloud compute --project \"firebase-hdwaf-development\" ssh --zone \"us-east1-b\" \"the-count\""
   },
   "author": "Grant Heath",
   "license": "ISC",

@@ -6,6 +6,15 @@ const dbRef = require('./dbRef');
 const calcInitialTotals = new Promise(
   (resolve, reject) => {
     dbRef.child('user-statuses').once('value', (allStatusUpdateData) => {
+
+      if (!allStatusUpdateData.exists()) {
+        console.log('no users exist');
+        dbRef.child('totals').set(totals, (error) => {
+          if (error) reject(error);
+        });
+        resolve();
+      };
+
       const statusCount = allStatusUpdateData.numChildren();
       let evaluationCount = 0;
 
