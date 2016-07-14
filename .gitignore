@@ -1,3 +1,4 @@
 /node_modules
 serviceAccountCredentials.json
 *debug.log
+remote.sh
