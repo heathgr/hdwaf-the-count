@@ -5,7 +5,7 @@ const dbRef = require('./dbRef');
 
 const calcInitialTotals = new Promise(
   (resolve, reject) => {
-    dbRef.child('user-statuses').once('value', (allStatusUpdateData) => {
+    dbRef.child('userStatuses').once('value', (allStatusUpdateData) => {
 
       if (!allStatusUpdateData.exists()) {
         console.log('no users exist');
@@ -27,7 +27,7 @@ const calcInitialTotals = new Promise(
             const uid = statusData.key;
 
             console.log('evaluating status for user: ', uid);
-            dbRef.child('user-profiles/' + uid).once('value', (profileData) => {
+            dbRef.child('userProfiles/' + uid).once('value', (profileData) => {
               const profileVal = profileData.val();
 
               //TODO validate profile using joi or whatever

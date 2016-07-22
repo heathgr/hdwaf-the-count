@@ -4,14 +4,14 @@ const dbRef = require('./dbRef');
 const totals = require('./totals');
 
 const watchStatusUpdates = () => {
-  dbRef.child('user-statuses').on('child_changed', (statusData) => {
+  dbRef.child('userStatuses').on('child_changed', (statusData) => {
     const statusVal = statusData.val();
     const uid = statusData.key;
 
     console.log('status updated for user: ', uid);
     //TODO validate updated data
     if (statusVal) {
-      dbRef.child('user-profiles/' + uid).once('value', (profileData) => {
+      dbRef.child('userProfiles/' + uid).once('value', (profileData) => {
         const profileVal = profileData.val();
 
         console.log('status: ', statusVal);

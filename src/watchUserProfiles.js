@@ -2,8 +2,8 @@ const dbRef = require('./dbRef');
 const firebase = require('firebase');
 
 const watchUserProfiles = () => {
-  dbRef.child('user-profiles').on('child_added', (profileData) => {
-    const userStatusRef = dbRef.child('user-statuses/' + profileData.key);
+  dbRef.child('userProfiles').on('child_added', (profileData) => {
+    const userStatusRef = dbRef.child('userStatuses/' + profileData.key);
 
     console.log('user profile added: ', profileData.key);
     userStatusRef.once('value', (userStatusData) => {
